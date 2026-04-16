@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Therapy Session Processing App
+
+A Next.js application for processing therapy session audio recordings. Upload audio files to automatically transcribe, summarize, and vectorize therapy sessions for analysis and record-keeping.
+
+## Features
+
+- **Audio Upload**: Upload therapy session recordings in various audio formats
+- **Automatic Transcription**: Convert speech to text with speaker identification
+- **Session Summarization**: Generate concise summaries of therapy sessions
+- **Vectorization**: Process transcripts for AI-powered analysis and search
+- **Session Management**: View and track the status of all uploaded sessions
+- **Real-time Status Updates**: Monitor processing progress from upload to completion
+
+## Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: React components with modern design
+- **Backend Integration**: RESTful API for session processing
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository and navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Usage
+
+1. **Upload Sessions**: Use the main page to upload audio recordings of therapy sessions
+2. **Monitor Progress**: Track transcription, summarization, and vectorization status
+3. **View Sessions**: Browse all processed sessions on the sessions page
+4. **Access Details**: Click on individual sessions to view transcripts, summaries, and speaker information
+
+## Project Structure
+
+```
+frontend/
+├── app/                    # Next.js app directory
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page with upload
+│   └── sessions/          # Sessions management
+│       ├── page.tsx       # Sessions list
+│       └── [id]/          # Individual session details
+│           └── page.tsx
+├── components/            # Reusable React components
+│   ├── AudioUpload.tsx    # File upload component
+│   ├── StatusBadge.tsx    # Status indicator
+│   └── TranscriptView.tsx # Transcript display
+├── lib/                   # Utility functions and types
+│   ├── api.ts            # API client functions
+│   └── types.ts          # TypeScript type definitions
+└── public/               # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-## Learn More
+### Code Quality
 
-To learn more about Next.js, take a look at the following resources:
+This project uses:
+- **ESLint** for code linting
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Follow the existing code style and TypeScript types
+2. Ensure all components are properly typed
+3. Test UI components across different screen sizes
+4. Keep API calls abstracted in `lib/api.ts`
